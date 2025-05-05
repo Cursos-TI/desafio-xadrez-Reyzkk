@@ -12,6 +12,7 @@ int main(){
     int RandomDistanceBispo = rand() % 5 + 1;
     int RandomDistanceTorre = rand() % 5 + 1;
     int RandomDistanceRainha = rand() % 8 + 1;
+    int MovimentoCavalo = 1;
 
     //Loop Utilizando For
     for(int i = 1; i <= RandomDistanceTorre; i++){
@@ -36,4 +37,13 @@ int main(){
         i++;
     }while( i <= RandomDistanceRainha);
     printf("\n-----------------------\n");
+
+    /*Loops Aninhados Move do Cavalo*/
+
+    while(MovimentoCavalo--){
+        for(int i = 0; i < 2; i++){
+            printf("Cima\n");
+        }
+        printf("Direita\n");
+    }
 }
