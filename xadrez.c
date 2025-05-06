@@ -24,7 +24,7 @@ int main(){
 
     while (i <= RandomDistanceBispo)
     {
-        printf("Movimento Peça Bispo Horizontal (%d)\n ", i);
+        printf("Movimento Peça Bispo Diagonal (%d)\n ", i);
 
         i++;
     }
