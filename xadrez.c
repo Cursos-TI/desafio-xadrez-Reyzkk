@@ -2,48 +2,56 @@
 #include <time.h>
 #include <stdlib.h>
 
+void MovementHorse(int MovimentoCavalo){
+
+    for(int i = 0; i < MovimentoCavalo; i++){
+        for(int j = 0; j < 3; j++){
+            if(j < 2){
+                printf("Cima");
+            } else {
+                printf("Direita");
+            }
+            printf("\n");
+        }
+    }
+
+}
+
+void MovementQueen(int p){
+    if(p > 0){
+        MovementQueen(p - 1);
+        printf("Esquerda %d\n", p);
+    }
+}
+
+void MovementTower(int p){
+    if(p > 0){
+        MovementTower(p - 1);
+        printf("Cima %d\n", p);
+    }
+}
+
+void MovementBishop(int p){
+    if(p > 0){
+        MovementBishop(p - 1);
+        printf("Cima/Direita %d\n", p);
+    }
+}
+
 int main(){
 
-    //for
-    //do while
-    //while 
+    
+    printf("Movimento Torre\n");
+    MovementTower(5); //Chamando Função setando valor 5 casas
+    
+    printf("Movimento Rainha\n");
+    MovementQueen(8);//Chamando Função setando valor 8 casas
 
-    srand(time(0));
-    int RandomDistanceBispo = rand() % 5 + 1;
-    int RandomDistanceTorre = rand() % 5 + 1;
-    int RandomDistanceRainha = rand() % 8 + 1;
-    int MovimentoCavalo = 1;
+    printf("Movimento Bispo\n");
+    MovementBishop(8);//Chamando Função setando valor 8 casas
 
-    //Loop Utilizando For
-    for(int i = 1; i <= RandomDistanceTorre; i++){
-        printf("Movimento Peça Torre Cima (%d)\n ", i);
-    }
-    printf("\n-----------------------\n");
-    //Declarando variavel de indice 
-    int i = 1;
-
-    while (i <= RandomDistanceBispo)
-    {
-        printf("Movimento Peça Bispo Diagonal (%d)\n ", i);
-
-        i++;
-    }
-    printf("\n-----------------------\n");
-    //Setando variavel indice = 0
-    i = 1;
-
-    do{
-        printf("Movimento Peça Rainha Esquerda (%d)\n ", i);
-        i++;
-    }while( i <= RandomDistanceRainha);
-    printf("\n-----------------------\n");
-
-    /*Loops Aninhados Move do Cavalo*/
-
-    while(MovimentoCavalo--){
-        for(int i = 0; i < 2; i++){
-            printf("Cima\n");
-        }
-        printf("Direita\n");
-    }
+    printf("Movimento Cavalo\n");
+    MovementHorse(2);//Chamando Função setando valor 2 casas
+    
+    return 0;
 }
